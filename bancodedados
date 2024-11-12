@@ -1,0 +1,41 @@
+CREATE DATABASE siteJogo;
+
+USE siteJogo
+
+CREATE TABLE jogos (
+
+    jogo_id INT PRIMARY KEY,
+    nomeJogo VARCHAR (100),
+    descricao TEXT,
+    price DECIMAL (10, 2) NOT NULL,
+    data_lanc DATE,
+    genero VARCHAR (69)
+
+);
+
+CREATE TABLE usuario (
+
+    user_id INT PRIMARY KEY,
+    username VARCHAR (69) NOT NULL,
+    email VARCHAR (255) NOT NULL UNIQUE,
+    senha VARCHAR (50) NOT NULL,
+    conta_data TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
+);
+
+CREATE TABLE compra (
+
+    compra_id INT PRIMARY KEY,
+    user_id INT,
+    jogo_id INT,
+    data_compra TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (jogo_id) REFERENCES jogos(jogo_id),
+    FOREIGN KEY (user_id) REFERENCES usuario(user_id)
+
+);
+
+INSERT INTO usuario (user_id, username, email, senha)
+VALUES (1, 'cudepinto', 'cudepinto@gmail.com', '123');
+
+INSERT INTO jogos (jogo_id, nomeJogo, descricao, price, data_lanc, genero)
+VALUES (1, 'Jogo Pica', 'um jogo muito pica e pica', 19.99, '2001-09-11', 'Ação');
