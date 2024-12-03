@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang = "pt-br">
+
+    <style>
+
+        body {
+            padding-left: 5vh;
+            padding-right: 5vh;
+            padding-bottom: 200px;
+            /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: black;
+            color: #8a2be2;
+            /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+            border-top: 4px solid #8a2be2;
+            border-left: 4px solid #8a2be2;
+            border-bottom: 4px solid #591b94;
+            border-right: 4px solid #591b94;
+            border-radius: 10px;
+            /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+            cursor: url(./cursor.cur), pointer;      
+            min-height: 1000vh;
+        }
+
+        #imagemBaixo {
+            position: relative;
+            margin-top: 1000vh;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        #imagemBaixo img {
+            filter: opacity(0);
+            transition: filter 0.5 ease;
+        }
+
+        #imagemBaixo img:hover {
+            filter: opacity(100%);
+        }
+
+        #texto2 {
+            filter: opacity(0);
+            transition: filter 0.5 ease;
+        }
+
+        #texto2:hover {
+            filter: opacity(100%);
+        }
+ 
+        html ::-webkit-scrollbar {
+            width: 17px;
+        }
+
+        html ::-webkit-scrollbar-thumb {
+            border-top: 1px solid #8a2be2;
+            border-left: 1px solid #8a2be2;  
+            border-right: 1px solid #591b94;   
+            border-bottom: 1px solid #591b94;  
+            background: black;
+        }
+
+        html ::-webkit-scrollbar-track {
+            background: black;
+            border-right: #591b94;
+        }
+ 
+        html ::-webkit-scrollbar-button:vertical {
+            background: #4c5844; 
+            border-top: 1px solid #8a2be2;
+            border-left: 1px solid #8a2be2;  
+            border-right: 1px solid #591b94;  
+            border-bottom: 1px solid #591b94;
+        }
+
+        html ::-webkit-scrollbar-button:vertical:decrement {
+            background: url('uparrow.png') no-repeat center; 
+            background-size: 17px;
+        }
+
+        html ::-webkit-scrollbar-button:vertical:increment {
+            background: url('downarrow.png') no-repeat center ; 
+            background-size: 17px;
+        }
+
+        .organizar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        a, .botao {
+            cursor: url('./link.cur'), pointer;
+            color: #8a2be2;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #591b94;
+        }
+
+        .botao {
+            appearance: none;
+            background-color: transparent;
+            color: #8a2be2;
+            /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+            border: 2px solid #8a2be2;
+            border-radius: 10px;
+            box-sizing: border-box;
+            display: inline-block;
+            /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+            line-height: normal;
+            /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+            margin: 0;
+            min-height: 60px;
+            min-width: 0;
+            /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+            outline: none;
+            padding: 16px 24px;
+            text-align: center;
+            /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+            transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+            user-select: none;
+            -webkit-user-select: none;
+            /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+            touch-action: manipulation;
+            width: 100%;
+            will-change: transform;
+        }
+
+        .botao:disabled {
+            pointer-events: none;
+        }
+
+        .botao:hover {
+            color: black;
+            background-color: #591b94;
+            transform: translateY(-2px);
+        }
+
+        .botao:active {
+            box-shadow: none;
+            transform: translateY(0);
+        }
+
+        .Cabecalho {
+            border-top: 4px solid #8a2be2;
+            border-bottom: 4px solid #591b94;
+            border-right: 4px solid #591b94;
+            border-left: 4px solid #8a2be2;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .Cabecalho img {
+            vertical-align: middle;
+        }
+
+
+    </style>
+
+            <head>
+                
+                <meta charset="utf8">
+                <title>teste</title>
+
+            </head>
+
+    <body>
+
+        <div>
+
+            <h1 class="Cabecalho">
+
+                <img src="caixa.png" width="200" height="170">
+                <p style="margin-top: -2vh; font-size: 45px;">TESTE</p>
+
+            </h1>
+
+        </div>
+
+        <div class="organizar">
+
+            <a class="botao" href="https://www.youtube.com/">Teste1</a>
+            <a class="botao" href="https://www.youtube.com/">Teste2</a>
+            <a class="botao" href="https://www.youtube.com/">Teste3</a>
+            <a class="botao" href="https://www.youtube.com/">Teste4</a>
+
+        </div>
+
+        <div id="imagemBaixo">
+
+            <img src="boo.png" alt="boo">
+            <p><b id="texto2" style="margin-top: -2vh; font-size: 45px;">BOO!!</b></p>
+
+        </div>
+
+    </body>
+
+</html>
